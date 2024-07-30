@@ -6,6 +6,7 @@ set _completion_commands \
 	'atlas completion fish' \
 	'buf completion fish' \
 	'caddy completion fish' \
+	'chezmoi completion fish' \
 	'delta --generate-completion fish' \
 	'ent completion fish' \
 	'fd --gen-completions fish' \
