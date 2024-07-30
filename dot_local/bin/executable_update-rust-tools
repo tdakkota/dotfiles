@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Update Rust tools.
+rustup update
+
+declare -a tools=(
+	"ripgrep"
+	"bat"
+	"fd-find"
+	"eza"
+	"hyperfine"
+	"starship"
+	"zellij"
+	"alacritty"
+	"git-delta"
+	"rbw"
+	"yazi-fm"
+	"yazi-cli"
+)
+
+for tool in "${tools[@]}"; do
+	RUSTFLAGS="-C target-cpu=native" cargo install --locked $tool
+done

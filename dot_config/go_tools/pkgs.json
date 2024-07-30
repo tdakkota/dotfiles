@@ -1,0 +1,71 @@
+[
+	"github.com/caddyserver/xcaddy/cmd/xcaddy",
+
+	"golang.org/x/tools/gopls",
+	"golang.org/x/telemetry/cmd/gotelemetry",
+	
+	"github.com/golangci/golangci-lint/cmd/golangci-lint",
+	"github.com/go-critic/go-critic/cmd/gocritic",
+	"github.com/quasilyte/go-ruleguard/cmd/ruleguard",
+	"github.com/quasilyte/go-perfguard/cmd/perfguard",
+	"honnef.co/go/tools/cmd/staticcheck",
+	"github.com/go-perf/go-perftuner",
+	"github.com/quasilyte/gogrep/cmd/gogrep",
+	"github.com/segmentio/golines",
+	
+	"github.com/fatih/gomodifytags",
+	"github.com/davidrjenni/reftools/cmd/fillstruct",
+	"github.com/josharian/impl",
+	"github.com/cweill/gotests/gotests",
+
+	"mvdan.cc/gofumpt",
+	"github.com/tailscale/depaware",
+	"golang.org/x/exp/cmd/modgraphviz",
+	"golang.org/dl/gotip",
+	"github.com/goreleaser/goreleaser",
+	"github.com/go-delve/delve/cmd/dlv",
+
+	"entgo.io/ent/cmd/ent",
+	"ariga.io/atlas/cmd/atlas",
+	"ariga.io/entimport/cmd/entimport",
+
+	"github.com/klauspost/cpuid/v2/cmd/cpuid",
+	"github.com/josharian/pex",
+	"github.com/josharian/pct",
+	"github.com/mikefarah/yq/v4",
+	"github.com/muesli/duf",
+	"github.com/jesseduffield/lazygit",
+	"github.com/jesseduffield/lazydocker",
+	"github.com/junegunn/fzf",
+	"github.com/dundee/gdu/v5/cmd/gdu",
+	"github.com/charmbracelet/gum",
+	"github.com/schachmat/wego",
+
+	"github.com/twpayne/chezmoi",
+	"github.com/schollz/croc/v10",
+
+	"github.com/aclements/go-misc/benchmany",
+	"github.com/aclements/go-misc/benchplot",
+	"mvdan.cc/sh/v3/cmd/shfmt",
+	"golang.org/x/tools/cmd/benchcmp",
+	"golang.org/x/tools/cmd/callgraph",
+	"golang.org/x/tools/cmd/deadcode",
+	"golang.org/x/tools/cmd/digraph",
+	"golang.org/x/tools/cmd/file2fuzz",
+	"golang.org/x/tools/cmd/godoc",
+	"golang.org/x/tools/cmd/goimports",
+	"golang.org/x/tools/cmd/gonew",
+	"golang.org/x/tools/cmd/goyacc",
+	"golang.org/x/tools/cmd/ssadump",
+	"golang.org/x/tools/cmd/stringer",
+	"golang.org/x/tools/cmd/toolstash",
+	"golang.org/x/perf/cmd/benchstat",
+	"golang.org/x/perf/cmd/benchfilter",
+
+	"google.golang.org/grpc/cmd/protoc-gen-go-grpc",
+	"google.golang.org/protobuf/cmd/protoc-gen-go",
+	"github.com/bufbuild/buf/cmd/...",
+
+	"sigs.k8s.io/kind",
+	"helm.sh/helm/v3/cmd/helm"
+]

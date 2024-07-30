@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+config="${XDG_CONFIG_HOME:-$HOME/.config}"
+
+FILE="${1:-$config/go_tools/pkgs.json}"
+echo "Installing packages from $FILE"
+
+LIST=$(cat $FILE | jq '.[]' | xargs -L1 printf "%s@latest\n")
+
+# Print package list
+printf '%s\n' "${LIST[@]}" | xargs -L1 printf "go install -v %s\n"
+
+# Install
+printf '%s\n' "${LIST[@]}" | GOAMD64=v3 xargs -L1 go install -v
