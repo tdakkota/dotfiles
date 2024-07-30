@@ -1,0 +1,69 @@
+layout {
+    default_tab_template {
+	children
+        pane size=1 borderless=true {
+            plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+                hide_frame_for_single_pane "false"
+
+                format_left  "{mode}#[fg=#89B4FA,bg=#181825,bold] {session}#[bg=#181825] {tabs}"
+                format_right "#[fg=#424554,bg=#181825]::{datetime}"
+                format_space "#[bg=#181825]"
+
+                mode_normal          "#[fg=#000000,bg=#89B4FA, bold]  "
+                mode_locked          "#[fg=#000000,bg=#89B4FA, bold]🔒"
+                mode_resize          "#[fg=#000000,bg=#89B4FA, bold]Resize"
+                mode_pane            "#[fg=#000000,bg=#89B4FA, bold]Move pane"
+                mode_tab             "#[fg=#000000,bg=#89B4FA, bold]Move tab"
+                mode_scroll          "#[fg=#000000,bg=#89B4FA, bold]Scroll"
+                mode_enter_search    "#[fg=#000000,bg=#89B4FA, bold]Enter 🔍"
+                mode_search          "#[fg=#000000,bg=#89B4FA, bold]🔍"
+                mode_rename_tab      "#[fg=#000000,bg=#89B4FA, bold]Rename tab"
+                mode_rename_pane     "#[fg=#000000,bg=#89B4FA, bold]Rename pane"
+                mode_session         "#[fg=#000000,bg=#89B4FA, bold]Session"
+                mode_move            "#[fg=#000000,bg=#89B4FA, bold]Move"
+                mode_prompt          "#[fg=#000000,bg=#89B4FA, bold]Prompt"
+                mode_tmux            "#[fg=#000000,bg=#FFC387, bold]Tmux"
+                mode_default_to_mode "normal"
+
+                tab_normal               "#[fg=#6C7086,bg=#181825] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+                tab_active               "#[fg=#9399B2,bg=#181825,bold,italic] {index} {name} {fullscreen_indicator}{sync_indicator}{floating_indicator}"
+                tab_fullscreen_indicator "□ "
+                tab_sync_indicator       "  "
+                tab_floating_indicator   "󰉈 "
+
+                datetime          "#[fg=#9399B2,bg=#181825] {format} "
+                datetime_format   "%A, %d %b %Y %H:%M"
+                datetime_timezone "Europe/Moscow"
+            }
+        }
+        // the default zellij tab-bar and status bar plugins
+        // pane size=1 borderless=true {
+        //     plugin location="zellij:tab-bar"
+        // }
+        // pane size=2 borderless=true {
+        //     plugin location="zellij:status-bar"
+        // }
+    }
+    cwd "$HOME"
+    tab name="Status" {
+        pane name="docker ps" size="40%" {
+            command "docker"
+            args "ps" "-a"
+        }
+        pane name="duf" size="30%" {
+            command "duf"
+            args "-only" "local"
+        }
+        pane split_direction="vertical" {
+            pane name="weather" size="20%" {
+                command "bash"
+                args "-c" "wego -d 0 | tail -n10"
+            }
+        }
+    }
+    tab {
+        pane {
+            command "fish"
+        }
+    }
+}

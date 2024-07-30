@@ -1,0 +1,4 @@
+sorting:
+    by: size # size, name, itemCount, mtime
+    order: desc
+show-relative-size: true

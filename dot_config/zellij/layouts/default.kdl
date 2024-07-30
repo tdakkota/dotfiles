@@ -1,0 +1,36 @@
+layout {
+    default_tab_template {
+        // the default zellij tab-bar and status bar plugins
+        pane size=1 borderless=true {
+             plugin location="zellij:tab-bar"
+        }
+	children
+        pane size=2 borderless=true {
+             plugin location="zellij:status-bar"
+        }
+    }
+    tab name="VLC" {
+        pane {
+            command "bash"
+            args "play.sh"
+            cwd "$HOME/Downloads/music"
+        }
+    }
+    cwd "$HOME"
+    tab name="Status" {
+        pane name="docker ps" size="40%" {
+            command "docker"
+            args "ps" "-a"
+        }
+        pane name="duf" size="30%" {
+            command "duf"
+            args "-only" "local"
+        }
+        pane split_direction="vertical" {
+            pane name="weather" size="20%" {
+                command "bash"
+                args "-c" "wego -d 0 | tail -n10"
+            }
+        }
+    }
+}

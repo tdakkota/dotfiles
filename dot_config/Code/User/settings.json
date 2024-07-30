@@ -1,0 +1,99 @@
+{
+  "telemetry.telemetryLevel": "off",
+  "redhat.telemetry.enabled": false,
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "'DejaVu Sans Mono', 'Droid Sans Mono', 'monospace', monospace",
+  "window.commandCenter": true,
+  "window.titleBarStyle": "custom",
+  "window.restoreFullscreen": true,
+  "window.newWindowDimensions": "fullscreen",
+  "window.autoDetectColorScheme": true,
+  "workbench.preferredLightColorTheme": "Default Light+",
+  "workbench.preferredDarkColorTheme": "Default Dark+",
+  "workbench.colorTheme": "Default Dark+",
+  "workbench.enableExperiments": false,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "gitlens.rebase"
+  },
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono', 'Fira Code', 'monospace', monospace",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.shellIntegration.history": 1000,
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash",
+      "icon": "terminal-bash",
+      "env": {
+        "VSCODE_WORKSPACE_FOLDER": "${workspaceFolder}"
+      }
+    },
+    "fish": {
+      "path": "fish",
+      "icon": "terminal-linux",
+      "env": {
+        "VSCODE_WORKSPACE_FOLDER": "${workspaceFolder}"
+      }
+    }
+  },
+  "terminal.integrated.defaultProfile.linux": "fish",
+  "[go]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always"
+    }
+  },
+  "go.toolsEnvVars": {
+    "GOTESTS_TEMPLATE_DIR": "/home/tdakkota/.config/gotests/templates"
+  },
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": [
+    "--fast"
+  ],
+  "go.lintOnSave": "workspace",
+  "go.addTags": {
+    "tags": "json,yaml",
+    "promptForTags": true
+  },
+  "go.testTimeout": "15m",
+  "go.testExplorer.showDynamicSubtestsInEditor": true,
+  "go.testExplorer.packageDisplayMode": "nested",
+  "go.showWelcome": false,
+  "go.inlayHints.constantValues": true,
+  "go.editorContextMenuCommands": {
+    "toggleTestFile": false,
+    "addTags": false,
+    "testAtCursor": false,
+    "playground": false,
+    "debugTestAtCursor": false
+  },
+  "gopls": {
+    "ui.semanticTokens": true,
+    "formatting.gofumpt": true,
+    "analyses": {
+      "nilness": false,
+      "useany": true,
+      "stdmethods": false,
+    }
+  },
+  "git.autofetch": true,
+  "git.inputValidationSubjectLength": 120,
+  "gitlens.views.commitDetails.files.layout": "tree",
+  "shellformat.path": "/home/tdakkota/go/bin/shfmt",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[cpp]": {
+    "editor.formatOnSave": false
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "cmake.showOptionsMovedNotification": false
+}

@@ -1,0 +1,90 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+format="""
+[](fg:color_hostname_bg)\
+$username$hostname\
+[](fg:color_hostname_bg bg:color_directory_bg)\
+$directory\
+[](fg:color_directory_bg)\
+($git_branch$git_status$git_state)$golang$rust$nodejs$python\
+$fill$jobs$cmd_duration$time\
+$line_break$character"""
+
+palette = 'tdakkota-dark'
+
+[palettes.tdakkota-dark]
+color_directory_fg = "#FFFFFF"
+color_directory_bg = "#31314F"
+
+color_hostname_fg = "#000000"
+color_hostname_bg = "#89B4FA"
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[directory]
+style = 'bg:color_directory_bg fg:color_directory_fg bold'
+read_only_style = 'bg:color_directory_bg fg:red bold'
+disabled = false
+truncation_length = 8
+truncate_to_repo = false
+format = '[ $path ]($style)[$read_only]($read_only_style)'
+
+[username]
+style_user = 'bg:color_hostname_bg fg:color_hostname_fg bold'
+disabled = false
+show_always = true
+format = '[$user]($style)'
+
+[hostname]
+style = 'bg:color_hostname_bg fg:color_hostname_fg bold'
+disabled = false
+ssh_only = false
+format = '[@$ssh_symbol$hostname ]($style)'
+
+[git_branch]
+format = ' on [$symbol$branch(:$remote_branch)]($style)'
+disabled = false
+
+[git_state]
+format = ' \([$state( $progress_current/$progress_total)]($style)\)'
+disabled = false
+
+[git_status]
+format = ' ([\[$all_status$ahead_behind\]]($style))'
+disabled = false
+
+[golang]
+format = ' via [$symbol($version)]($style)'
+disabled = false
+symbol = " "
+
+[rust]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[python]
+disabled = true
+
+[fill]
+disabled = false
+symbol = ' '
+
+[cmd_duration]
+disabled = false
+min_time = 100
+
+[time]
+style = 'bold red'
+disabled = false
