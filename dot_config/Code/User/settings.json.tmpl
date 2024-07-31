@@ -44,7 +44,7 @@
     }
   },
   "go.toolsEnvVars": {
-    "GOTESTS_TEMPLATE_DIR": "/home/tdakkota/.config/gotests/templates"
+    "GOTESTS_TEMPLATE_DIR": "/home/{{ .chezmoi.username }}/.config/gotests/templates"
   },
   "go.lintTool": "golangci-lint",
   "go.lintFlags": [
@@ -79,7 +79,7 @@
   "git.autofetch": true,
   "git.inputValidationSubjectLength": 120,
   "gitlens.views.commitDetails.files.layout": "tree",
-  "shellformat.path": "/home/tdakkota/go/bin/shfmt",
+  "shellformat.path": "/home/{{ .chezmoi.username }}/go/bin/shfmt",
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
