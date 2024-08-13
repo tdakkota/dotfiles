@@ -2,7 +2,11 @@
 
 # Set latest version of Go as default.
 # latest_version="$(curl 'https://go.dev/dl/?mode=json&include=all' | jq -r '.[0].version')"
-latest_version="$(curl 'https://go.dev/dl/?mode=json' | jq -r '.[0].version')"
+latest_version="$(curl -sSL 'https://go.dev/dl/?mode=json' | jq -r '.[0].version')"
+if [ -z "${latest_version}" ]; then
+    echo "Failed to get latest Go version"
+    exit 1
+fi
 echo "Latest Go is ${latest_version}"
 go env -w GOTOOLCHAIN="${latest_version}+auto"
 
