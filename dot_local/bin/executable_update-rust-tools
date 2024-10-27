@@ -13,6 +13,7 @@ declare -a tools=(
 	"zellij"
 	"alacritty"
 	"git-delta"
+	"bottom"
 )
 
 for tool in "${tools[@]}"; do
