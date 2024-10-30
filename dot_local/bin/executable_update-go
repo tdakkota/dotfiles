@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 # Set latest version of Go as default.
 # latest_version="$(curl 'https://go.dev/dl/?mode=json&include=all' | jq -r '.[0].version')"
 latest_version="$(curl -sSL 'https://go.dev/dl/?mode=json' | jq -r '.[0].version')"
@@ -8,5 +10,16 @@ if [ -z "${latest_version}" ]; then
     exit 1
 fi
 echo "Latest Go is ${latest_version}"
-go env -w GOTOOLCHAIN="${latest_version}+auto"
 
+filename="$(curl -sSL 'https://go.dev/dl/?mode=json' | jq -r '.[0].files[] | select(.os == "linux" and .arch == "amd64") | .filename')"
+if [ -z "${filename}" ]; then
+    echo "Failed to get archive"
+    exit 1
+fi
+echo "Downloading ${filename}"
+
+curl -Lo "/tmp/$filename" "https://go.dev/dl/${filename}"
+rm -rf "$HOME/.go"
+mkdir -pv "$HOME/.go"
+tar -C "$HOME/.go" --strip-components=1 -xzf "/tmp/${filename}"
+rm -rf "/tmp/$filename"
