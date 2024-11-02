@@ -5,11 +5,11 @@
 add_newline = true
 
 format="""
-[](fg:color_hostname_bg)\
+[](fg:color_hostname_bg bold)\
 $username$hostname\
-[](fg:color_hostname_bg bg:color_directory_bg)\
+[](fg:color_hostname_bg bg:color_directory_bg bold)\
 $directory\
-[](fg:color_directory_bg)\
+[](fg:color_directory_bg bold)\
 ($git_branch$git_status$git_state)$golang$rust$nodejs$python\
 $fill$jobs$cmd_duration$time\
 $line_break$character"""
