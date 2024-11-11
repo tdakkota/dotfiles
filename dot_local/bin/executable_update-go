@@ -2,6 +2,9 @@
 
 set -x
 
+current_version="$(go version | awk '{print $3}')"
+echo "Current Go is ${current_version}"
+
 # Set latest version of Go as default.
 # latest_version="$(curl 'https://go.dev/dl/?mode=json&include=all' | jq -r '.[0].version')"
 latest_version="$(curl -sSL 'https://go.dev/dl/?mode=json' | jq -r '.[0].version')"
@@ -9,7 +12,12 @@ if [ -z "${latest_version}" ]; then
     echo "Failed to get latest Go version"
     exit 1
 fi
+
 echo "Latest Go is ${latest_version}"
+if [ "${latest_version}" = "${current_version}" ]; then
+    echo "Go is already up to date"
+    exit 0
+fi
 
 filename="$(curl -sSL 'https://go.dev/dl/?mode=json' | jq -r '.[0].files[] | select(.os == "linux" and .arch == "amd64") | .filename')"
 if [ -z "${filename}" ]; then
