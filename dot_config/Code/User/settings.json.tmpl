@@ -102,5 +102,9 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "cmake.showOptionsMovedNotification": false
+  "cmake.showOptionsMovedNotification": false,
+  "makefile.configureOnOpen": false,
+  {{- with $proxy := $.vscode.proxy }}
+  "http.proxy": {{ $proxy | printf "%q" }},
+  {{- end }}
 }
