@@ -41,7 +41,6 @@
 	"github.com/charmbracelet/gum",
 	"github.com/schachmat/wego",
 
-	"github.com/twpayne/chezmoi",
 	"github.com/schollz/croc/v10",
 
 	"github.com/aclements/go-misc/benchmany",
