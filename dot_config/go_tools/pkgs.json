@@ -22,7 +22,7 @@
 	"github.com/tailscale/depaware",
 	"golang.org/x/exp/cmd/modgraphviz",
 	"golang.org/dl/gotip",
-	"github.com/goreleaser/goreleaser",
+	"github.com/goreleaser/goreleaser/v2",
 	"github.com/go-delve/delve/cmd/dlv",
 
 	"entgo.io/ent/cmd/ent",
