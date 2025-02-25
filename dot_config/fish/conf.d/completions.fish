@@ -11,6 +11,7 @@ set _completion_commands \
 	'ent completion fish' \
 	'fd --gen-completions fish' \
 	'gh completion -s fish' \
+	'task --completion fish' \
 	'helm completion fish' \
 	'kind completion fish' \
 	'kubectl completion fish' \
