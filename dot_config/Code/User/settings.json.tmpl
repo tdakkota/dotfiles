@@ -112,6 +112,12 @@
   },
   "cmake.showOptionsMovedNotification": false,
   "makefile.configureOnOpen": false,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": false,
+    "scminput": false
+  },
   {{- with $proxy := $.vscode.proxy }}
   "http.proxy": {{ $proxy | printf "%q" }},
   {{- end }}
