@@ -24,6 +24,8 @@
 	"golang.org/dl/gotip",
 	"github.com/goreleaser/goreleaser/v2",
 	"github.com/go-delve/delve/cmd/dlv",
+	"github.com/goreleaser/goreleaser/v2",
+	"github.com/go-task/task/v3/cmd/task",
 
 	"entgo.io/ent/cmd/ent",
 	"ariga.io/atlas/cmd/atlas",
