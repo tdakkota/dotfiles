@@ -1,0 +1,5 @@
+{{- with $ghcs := $.ghcs }}
+    {{- with $proxy := $ghcs.proxy }}
+    set --export GHCS_PROXY {{ $proxy | printf "%q" }}
+    {{- end }}
+{{- end }}
