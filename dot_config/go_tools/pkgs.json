@@ -4,7 +4,7 @@
 	"golang.org/x/tools/gopls",
 	"golang.org/x/telemetry/cmd/gotelemetry",
 	
-	"github.com/golangci/golangci-lint/cmd/golangci-lint",
+	"github.com/golangci/golangci-lint/v2/cmd/golangci-lint",
 	"github.com/go-critic/go-critic/cmd/gocritic",
 	"github.com/quasilyte/go-ruleguard/cmd/ruleguard",
 	"github.com/quasilyte/go-perfguard/cmd/perfguard",
@@ -24,7 +24,6 @@
 	"golang.org/dl/gotip",
 	"github.com/goreleaser/goreleaser/v2",
 	"github.com/go-delve/delve/cmd/dlv",
-	"github.com/goreleaser/goreleaser/v2",
 	"github.com/go-task/task/v3/cmd/task",
 
 	"entgo.io/ent/cmd/ent",
