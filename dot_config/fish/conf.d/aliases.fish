@@ -10,4 +10,6 @@ if status is-interactive
 	alias ll='ls --long --header --all --git --classify --icons'
 	alias la='ls --all'
 	alias l='ls --classify --icons'
+
+	alias k='kubectl'
 end
