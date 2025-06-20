@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/alacritty/themes/github_dark_high_contrast.toml"]
+import = ["~/.config/alacritty/themes/catppuccin.toml"]
 
 [env]
 TERM = "xterm-256color"
