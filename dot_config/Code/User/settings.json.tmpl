@@ -90,6 +90,7 @@
   "git.inputValidationSubjectLength": 120,
   "gitlens.views.commitDetails.files.layout": "tree",
   "shellformat.path": "/home/{{ .chezmoi.username }}/go/bin/shfmt",
+  "docker.extension.enableComposeLanguageServer": false,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -105,6 +106,9 @@
   "[cpp]": {
     "editor.formatOnSave": false
   },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
   "makefile.configureOnOpen": false,
   "github.copilot.enable": {
     "*": true,
@@ -113,6 +117,6 @@
     "scminput": false
   },
   {{- with $proxy := $.vscode.proxy }}
-  "http.proxy": {{ $proxy | printf "%q" }},
+  "http.proxy": {{ $proxy | printf "%q" }}
   {{- end }}
 }
