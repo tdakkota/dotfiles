@@ -1,0 +1,32 @@
+[use-grammars]
+only = [
+	"rust",
+	"go", "gomod", "gowork", "gotmpl",
+	"yaml", "json", "toml",
+	"bash", "dockerfile", "docker-compose"
+]
+
+[language-server.gopls]
+command = "gopls"
+config = { "ui.semanticTokens" = true, "formatting.gofumpt" = true, "analyses" = { "nilness" = false, "useany" = true, "stdmethods" = false } }
+
+[[language]]
+name = "go"
+roots = ["go.work", "go.mod"]
+auto-format = true
+comment-token = "//"
+formatter = { command = "golangci-lint", args = ["fmt", "--stdin"] }
+language-servers = [ "gopls"]
+
+[[language]]
+name = "toml"
+
+[[language]]
+name = "yaml"
+
+[[language]]
+name = "nix"
+file-types = ["nix"]
+auto-format = true
+comment-token = "#"
+formatter = { command = "nixfmt" }

@@ -7,3 +7,5 @@ starship init fish | source
 
 # Install only reverse search.
 fzf_configure_bindings --directory= --git_log= --git_status= --processes= --variables=
+
+set -gx EDITOR hx
